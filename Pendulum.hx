@@ -16,10 +16,10 @@ class Pendulum extends Object {
         super(parent);
         stringLength = length;
         
-        angle = Math.PI / 4;
+        angle = Math.PI / 3;
         aVelocity = 0.0;
         aAcceleration = 0.0;
-        damping = 1;
+        damping = 0.999;
     }
 
     public function update(dt:Float) {
