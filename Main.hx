@@ -1,14 +1,20 @@
+import h2d.Graphics;
+
 class Main extends hxd.App {
     var pdl : Array<Pendulum>;
+    var scene : Scene;
 
   override function init() {
     // creates a new object and put it at the center of the sceen
     pdl = [];
+    scene = new Scene(s2d);
+    scene.setSize(s2d.width, s2d.height);
 
     for (i in 0...10) {
       var tmpPdl = new Pendulum(s2d, 150 + 50 * i);
       tmpPdl.setOrigin(Std.int(s2d.width / 2),Std.int(s2d.height / 2 - s2d.height / 3));
 
+      /*
       // load the haxe logo png into a tile
       var tile = hxd.Res.ball.toTile();
 
@@ -18,7 +24,7 @@ class Main extends hxd.App {
       var bmp = new h2d.Bitmap(tile, tmpPdl);
       bmp.setScale(0.5);
       bmp.alpha = 1;
-
+      */
       pdl.push(tmpPdl);
     }
 

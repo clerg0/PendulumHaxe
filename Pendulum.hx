@@ -1,5 +1,6 @@
-import h2d.Tile;
 import h2d.Object;
+import h2d.Graphics;
+import h2d.RenderContext;
 
 class Pendulum extends Object {
     var stringLength:Float;
@@ -9,6 +10,8 @@ class Pendulum extends Object {
     var damping:Float;
     var xOrigin:Float;
     var yOrigin:Float;
+
+    var customGraphics:h2d.Graphics;
 
     static var gravity:Float = 0.4;
 
@@ -20,6 +23,8 @@ class Pendulum extends Object {
         aVelocity = 0.0;
         aAcceleration = 0.0;
         damping = 0.999;
+
+        customGraphics = new h2d.Graphics(parent);
     }
 
     public function update(dt:Float) {
@@ -40,5 +45,11 @@ class Pendulum extends Object {
     public function setOrigin(x:Float, y:Float) {
         xOrigin = x;
         yOrigin = y;
+    }
+
+    override public function draw( ctx : RenderContext ) {
+        customGraphics.beginFill(0xFF0000);
+        customGraphics.drawCircle(x,y,10);
+        customGraphics.endFill();
     }
 }
