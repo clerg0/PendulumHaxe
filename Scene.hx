@@ -23,4 +23,8 @@ class Scene extends Object {
         graphic.drawRect(0, 0, w, h);
         graphic.endFill();    
     }
+
+    public function testSurBrancheDeTest() {
+        //TODO
+    }
 }
